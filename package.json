@@ -1,0 +1,25 @@
+{
+  "name": "Burger",
+  "version": "1.0.0",
+  "description": "A simple logging app using node, express, mysql, and handlebars",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/medricr/Burger.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/medricr/Burger/issues"
+  },
+  "homepage": "https://github.com/medricr/Burger#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "mysql": "^2.17.1"
+  }
+}
