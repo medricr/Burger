@@ -11,6 +11,18 @@ var orm = {
         })
     },
     // TODO: function which allows the user to insert one entry into the databse
+    insertOne: function(table, col1, col2, val1, val2){
+        var queryString = 'INSERT INTO ' + table;
+        queryString += ' (';
+        queryString += col1.toString();
+        queryString += ',';
+        queryString += col2.toString();
+        queryString += ') VALUES (';
+        queryString += val1.toString();
+        queryString += ',';
+        queryString += val2;
+        queryString += ')';
+    }
 }
 
 module.exports = orm;
