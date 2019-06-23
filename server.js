@@ -7,7 +7,7 @@ var PORT = process.env.PORT || 8080;
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 // allow app to serve static files
-app.use(express.static('public'));
+app.use(express.static(__dirname + 'public/assets/css'));
 // set up handlebars functionality
 var exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));

@@ -1,7 +1,31 @@
-<h1>BURGERS</h1>
+<h1 class='text-centered'>Eat-Da-Burger!</h1>
 
+<div class='container'>
+    <div class='row'>
+        <div class='col-sm-12'>
+            <h4>~~ Uneated burgers ~~</h4>
+            {{#each burger_table}}
+                {{#unless this.devoured}}
+                    {{this.burger_name}}
+                    
+                {{/unless}}
+            {{/each}}
+        </div>
+    </div>
+    <cdiv class='row'>
+        <div class='col-sm-12'>
+            <h4>~~ Eaten burgers ~~</h4>
+            {{#each burger_table}}
+                {{#if this.devoured}}
+                    {{this.burger_name}}
+                {{/if}}
+            {{/each}}
+        </div>
+    </cdiv>
+</div>
+{{!-- </div>
 <ul>
     {{#each burger_table}}
         {{this.burger_name}}
     {{/each}}
-</ul>
+</ul> --}}
