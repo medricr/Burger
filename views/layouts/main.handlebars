@@ -13,4 +13,41 @@
 	<body>
 		{{{ body }}}
 	</body>
+	{{!-- Script for button handlers --}}
+	<script>
+		$(function(){
+			// When the user clicks a button to create a new burger
+			$('#new_burger_btn').on('click',function(event){
+				event.preventDefault();
+				// Create a new burger object
+				var new_burger = {
+					name: $('#new_burger').val().trim(),
+					devoured: false
+				};
+				// Make an ajax call, passing in the new burger object
+				$.ajax('/api/burgers',{
+					type: 'POST',
+					data: new_burger
+				}).then(function(){
+					location.reload();
+				})
+			})
+			// When the user cliks on a burger...
+			$('.eat_burger_btn').on('click',function(event){
+				event.preventDefault();
+				// Create a new state object
+				var new_state = {
+					devoured: true
+				}
+				// Make an ajax call, changing the state of the burger that has been clicked
+				$.ajax('api/burgers/' + this.value,{
+					type: "PUT",
+					data: new_state
+				}).then(function(){
+					console.log('burger updated');
+					location.reload();
+				})
+			})
+		})
+	</script>
 </html>

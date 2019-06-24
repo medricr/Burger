@@ -2,18 +2,15 @@
 
 <div class='container'>
     <div class='row'>
-        <div class='col-sm-12'>
-            <h4>~~ Uneated burgers ~~</h4>
+        <div class='col-sm-6'>
+            <h4>~~ Uneaten burgers ~~</h4>
             {{#each burger_table}}
                 {{#unless this.devoured}}
-                    {{this.burger_name}}
-                    
+                        <button type='submit' class='eat_burger_btn' value={{this.id}}>{{this.burger_name}}</button>
                 {{/unless}}
             {{/each}}
         </div>
-    </div>
-    <cdiv class='row'>
-        <div class='col-sm-12'>
+        <div class='col-sm-6'>
             <h4>~~ Eaten burgers ~~</h4>
             {{#each burger_table}}
                 {{#if this.devoured}}
@@ -21,11 +18,16 @@
                 {{/if}}
             {{/each}}
         </div>
-    </cdiv>
+    </div>
+    <div class='row'>
+        <div class = 'col-sm-12'>
+            <form>
+                <div class='form-group'>
+                    <label>Create a Burger!</label>
+                    <input type='text' class='form-control' id='new_burger' placeholder='Chise Borger'>
+                    <button class = 'btn btn-primary' type='submit' id='new_burger_btn'>CREATE UR BURGER</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
-{{!-- </div>
-<ul>
-    {{#each burger_table}}
-        {{this.burger_name}}
-    {{/each}}
-</ul> --}}
