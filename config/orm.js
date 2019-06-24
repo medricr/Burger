@@ -44,14 +44,14 @@ var orm = {
     // function which shows all items in the database
     selectAll: function(table, cb){
         var queryString = 'SELECT * FROM ??;';
-        console.log(queryString);
+        // Make a db query useing the constructed queryString
         connection.query(queryString, [table], function(err,result){
             if(err) throw err;
             // console.log(result);
             cb(result);
         })
     },
-    // TODO: function which allows the user to insert one entry into the databse
+    // fucntion which allows user to add items to the database
     insertOne: function(table, cols, vals, cb){
         var queryString = 'INSERT INTO ' + table;
         queryString += ' (';
@@ -60,8 +60,6 @@ var orm = {
         queryString += 'VALUES (';
         queryString += printQuestionMarks(vals.length);
         queryString += ') ';
-
-        console.log(queryString);
 
         connection.query(queryString, vals, function(err,result){
             if(err) throw err;
